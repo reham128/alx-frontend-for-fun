@@ -1,0 +1,57 @@
+:root {
+  --switch-size: 40px;
+}
+
+.toggle {
+  display: flex;
+  transform: translateX(100px);
+}
+
+.toggle-label {
+  position: relative;
+}
+
+.toggle-inner {
+  height: 30px;
+  width: calc(var(--switch-size) * 2);
+  border: 2px solid rgb(199, 199, 199);
+  background: rgb(235, 235, 235);
+  border-radius: 30px;
+  color: rgb(124, 124, 124);
+  font-weight: bold;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.toggle-cb:checked+.toggle-label .toggle-inner {
+  background: rgb(213, 1, 58);
+  color: rgba(249, 240, 240, 0.925);
+}
+
+.toggle-cb:checked+.toggle-label .toggle-switch {
+  transform: translateX(calc(var(--switch-size) * 1)) translateY(calc(var(--switch-size) * -1));
+}
+
+.toggle-switch {
+  width: var(--switch-size);
+  height: var(--switch-size);
+  border: 2px solid rgb(162, 160, 160);
+  background: rgba(249, 240, 240, 0.925);
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(calc(var(--switch-size) * -1));
+}
+
+.toggle-inner::before {
+  content: "Yes";
+}
+
+.toggle-inner::after {
+  content: "No";
+}
+
+.toggle-cb {
+  display: none;
+}
